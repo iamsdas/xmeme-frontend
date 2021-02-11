@@ -1,7 +1,9 @@
 <template>
   <div class="container-fluid">
     <div>Name: {{ name }}</div>
-    <div>URL: {{ url }}</div>
+    <div>
+      <img :src="url" @error="showAltImage" />
+    </div>
     <div>caption: {{ caption }}</div>
   </div>
 </template>
@@ -12,7 +14,14 @@ export default {
   props: {
     name: String,
     url: String,
-    caption: String
+    caption: String,
+    id: Number
+  },
+  methods: {
+    showAltImage(event) {
+      event.target.src =
+        "https://breakthrough.org/wp-content/uploads/2018/10/default-placeholder-image.png";
+    }
   }
 };
 </script>
