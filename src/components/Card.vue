@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <div>Name: {{ name }}</div>
     <div>URL: {{ url }}</div>
     <div>caption: {{ caption }}</div>

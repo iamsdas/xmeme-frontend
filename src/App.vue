@@ -1,6 +1,7 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Card name="dummy name" url="dummy url" caption="this is a caption" />
+  <div>
+    <Card name="dummy name" url="dummy url" caption="this is a caption" />
+  </div>
 </template>
 
 <script>
