@@ -1,11 +1,17 @@
 <template>
-  <div v-for="(result, index) in results" :key="index">
-    <Card
-      :caption="result.caption"
-      :id="result.id"
-      :name="result.name"
-      :url="result.url"
-    />
+  <div class="container-fluid">
+    <div
+      class="row row-cols-1 justify-content-center"
+      v-for="(result, index) in results"
+      :key="index"
+    >
+      <Card
+        :caption="result.caption"
+        :id="result.id"
+        :name="result.name"
+        :url="result.url"
+      />
+    </div>
   </div>
 </template>
 

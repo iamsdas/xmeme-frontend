@@ -1,10 +1,14 @@
 <template>
-  <div class="container-fluid">
-    <div>Name: {{ name }}</div>
-    <div>
-      <img :src="url" @error="showAltImage" />
+  <div class="col-sm-5">
+    <div class="card">
+      <div class="card-header">{{ name }}</div>
+      <div>
+        <img class="img-fluid" :src="url" @error="showAltImage" />
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ caption }}</p>
+      </div>
     </div>
-    <div>caption: {{ caption }}</div>
   </div>
 </template>
 
@@ -26,4 +30,11 @@ export default {
 };
 </script>
 
-<style scoped></style>>
+<style scoped>
+.card {
+  margin: 5px 0px;
+}
+.card-header {
+  text-transform: capitalize;
+}
+</style>
