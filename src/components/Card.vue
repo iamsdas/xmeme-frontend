@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-5">
+  <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
     <div class="card">
       <div class="card-header">{{ name }}</div>
       <div>
