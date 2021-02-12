@@ -2,7 +2,7 @@
   <!-- Button trigger modal -->
   <button
     type="button"
-    class="btn btn-outline-success"
+    class="btn btn-outline-primary"
     data-bs-toggle="modal"
     data-bs-target="#exampleModal"
   >
@@ -20,7 +20,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Add new meme</h5>
           <button
             type="button"
             class="btn-close"
@@ -30,24 +30,28 @@
         </div>
         <form>
           <div class="modal-body">
-            <label for="name">Name: </label>
-            <input type="text" v-model="name" />
+            <label class="form-label" for="name">Name: </label>
+            <input class="form-control" type="text" v-model="name" />
             <br />
-            <label for="url">URL: </label>
-            <input type="text" v-model="url" />
+            <label class="form-label" for="url">URL: </label>
+            <input class="form-control" type="text" v-model="url" />
             <br />
-            <label for="caption">Caption:</label>
-            <input type="text" v-model="caption" />
+            <label class="form-label" for="caption">Caption:</label>
+            <input class="form-control" type="text" v-model="caption" />
           </div>
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-outline-secondary"
               data-bs-dismiss="modal"
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary" @click="addNewMeme()">
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              @click="addNewMeme()"
+            >
               Add
             </button>
           </div>

@@ -6,7 +6,7 @@
         <a class="navbar-brand" href="/">XMeme</a>
       </div>
       <form class="d-flex gap-1">
-        <button class="btn btn-outline-success" @click="updateList()">
+        <button class="btn btn-outline-primary" @click="updateList()">
           Refresh
         </button>
         <new-meme @update="updateList()" />
