@@ -23,7 +23,7 @@ export default {
     };
   },
   mounted() {
-    fetch("http://54.211.242.231:8081/meme")
+    fetch("https://xmeme-stream-backend.herokuapp.com/memes")
       .then(data => data.json())
       .then(data => {
         this.results = data;
