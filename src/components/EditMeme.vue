@@ -2,25 +2,24 @@
   <!-- Button trigger modal -->
   <button
     type="button"
-    class="btn btn-outline-primary"
+    class="btn btn-sm"
     data-bs-toggle="modal"
-    data-bs-target="#addModal"
+    :data-bs-target="modalIdHash"
   >
-    Add Meme
+    <i class="bi bi-pencil-fill"></i>
   </button>
-
   <!-- Modal -->
   <div
     class="modal fade"
-    id="addModal"
+    :id="modalId"
     tabindex="-1"
-    aria-labelledby="exampleModalLabel"
+    aria-labelledby="memeModalLabel"
     aria-hidden="true"
   >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add new meme</h5>
+          <h5 class="modal-title" id="memeModalLabel">Add new meme</h5>
           <button
             type="button"
             class="btn-close"
@@ -30,9 +29,6 @@
         </div>
         <form>
           <div class="modal-body">
-            <label class="form-label" for="name">Name: </label>
-            <input class="form-control" type="text" v-model="name" />
-            <br />
             <label class="form-label" for="url">URL: </label>
             <input class="form-control" type="text" v-model="url" />
             <br />
@@ -42,7 +38,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-outline-secondary"
               data-bs-dismiss="modal"
             >
               Close
@@ -50,9 +46,9 @@
             <button
               type="button"
               class="btn btn-outline-success"
-              @click="addNewMeme()"
+              @click="editMeme()"
             >
-              Add
+              Update
             </button>
           </div>
         </form>
@@ -64,24 +60,46 @@
 <script>
 import axios from "axios";
 export default {
-  name: "NewMeme",
+  name: "EditMeme",
   data() {
     return {
-      name: "",
-      url: "",
-      caption: ""
+      url: this.origin_url,
+      caption: this.origin_caption,
+      id: this.origin_id
     };
+  },
+  props: {
+    origin_url: {
+      type: String,
+      default: ""
+    },
+    origin_caption: {
+      type: String,
+      default: ""
+    },
+    origin_id: {
+      type: Number
+    }
   },
   emits: ["update"],
   computed: {
     body() {
-      return { name: this.name, url: this.url, caption: this.caption };
+      return { url: this.url, caption: this.caption };
+    },
+    modalId() {
+      return "modal" + `${this.id}`;
+    },
+    modalIdHash() {
+      return "#modal" + `${this.id}`;
     }
   },
   methods: {
-    addNewMeme() {
+    editMeme() {
       axios
-        .post("https://xmeme-stream-backend.herokuapp.com/memes", this.body)
+        .patch(
+          "https://xmeme-stream-backend.herokuapp.com/memes/" + `${this.id}`,
+          this.body
+        )
         .then(() => {
           this.$emit("update");
         });

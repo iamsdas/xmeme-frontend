@@ -25,6 +25,7 @@
         :id="result.id"
         :name="result.name"
         :url="result.url"
+        @update="updateList()"
       />
     </div>
   </div>
@@ -59,5 +60,3 @@ export default {
   }
 };
 </script>
-
-<style></style>
