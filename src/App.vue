@@ -1,6 +1,19 @@
 <template>
-  <button class="btn btn-primary" @click="updateList()">update</button>
-  <new-meme @update="updateList()" />
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">XMeme</a>
+      </div>
+      <form class="d-flex gap-1">
+        <button class="btn btn-outline-success" @click="updateList()">
+          Refresh
+        </button>
+        <new-meme @update="updateList()" />
+      </form>
+    </div>
+  </nav>
+  <!-- Card list -->
   <div class="container-fluid">
     <div
       class="row row-cols-1 justify-content-center"
