@@ -1,6 +1,7 @@
 <template>
   <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
     <div class="card">
+      <!-- header  -->
       <div class="card-header justify-content-between d-flex">
         <div>{{ name }}</div>
         <edit-meme
@@ -10,9 +11,11 @@
           @update="update()"
         />
       </div>
+      <!-- image  -->
       <div>
         <img class="img-fluid" :src="url" @error="showAltImage" />
       </div>
+      <!-- caption -->
       <div class="card-body">
         <p class="card-text">{{ caption }}</p>
       </div>

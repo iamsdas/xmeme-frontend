@@ -18,6 +18,7 @@
   >
     <div class="modal-dialog">
       <div class="modal-content">
+        <!-- Modal Header -->
         <div class="modal-header">
           <h5 class="modal-title" id="memeModalLabel">Add new meme</h5>
           <button
@@ -28,6 +29,7 @@
           ></button>
         </div>
         <form>
+          <!-- Modal Body (Form) -->
           <div class="modal-body">
             <label class="form-label" for="url">URL: </label>
             <input class="form-control" type="text" v-model="url" />
@@ -35,6 +37,7 @@
             <label class="form-label" for="caption">Caption:</label>
             <input class="form-control" type="text" v-model="caption" />
           </div>
+          <!-- Modal Footer (Buttons) -->
           <div class="modal-footer">
             <button
               type="button"

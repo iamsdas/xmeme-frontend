@@ -20,6 +20,7 @@
       v-for="(result, index) in results"
       :key="index"
     >
+      <!-- Card -->
       <Card
         :caption="result.caption"
         :id="result.id"
