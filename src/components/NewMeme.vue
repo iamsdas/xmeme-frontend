@@ -87,6 +87,7 @@ export default {
         .post("https://xmeme-stream-backend.herokuapp.com/memes", this.body)
         .then(() => {
           this.$emit("update");
+          this.name = this.url = this.caption = "";
         });
     }
   }
