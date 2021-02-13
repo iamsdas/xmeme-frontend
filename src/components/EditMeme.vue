@@ -49,6 +49,7 @@
             <button
               type="button"
               class="btn btn-outline-success"
+              data-bs-dismiss="modal"
               @click="editMeme()"
             >
               Update
