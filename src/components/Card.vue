@@ -13,7 +13,12 @@
       </div>
       <!-- image  -->
       <div>
-        <img class="img-fluid" :src="url" @error="showAltImage" />
+        <img
+          class="img-fluid"
+          :src="url"
+          loading="lazy"
+          @error="showAltImage"
+        />
       </div>
       <!-- caption -->
       <div class="card-body">
@@ -30,6 +35,11 @@ export default {
   components: {
     EditMeme
   },
+  data() {
+    return {
+      src: require("../assets/placeholder.png")
+    };
+  },
   emits: ["update"],
   props: {
     name: String,
@@ -39,8 +49,7 @@ export default {
   },
   methods: {
     showAltImage(event) {
-      event.target.src =
-        "https://breakthrough.org/wp-content/uploads/2018/10/default-placeholder-image.png";
+      event.target.src = this.src;
     },
     update() {
       this.$emit("update");
