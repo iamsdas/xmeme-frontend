@@ -20,7 +20,7 @@
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
-          <h5 class="modal-title" id="memeModalLabel">Add new meme</h5>
+          <h5 class="modal-title" id="memeModalLabel">Edit meme</h5>
           <button
             type="button"
             class="btn-close"

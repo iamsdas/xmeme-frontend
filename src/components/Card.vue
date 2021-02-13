@@ -1,5 +1,5 @@
 <template>
-  <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
+  <div class="col-xs-10 col-sm-8 col-md-5">
     <div class="card">
       <!-- header  -->
       <div class="card-header justify-content-between d-flex">
