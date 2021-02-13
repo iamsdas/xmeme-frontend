@@ -111,3 +111,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.btn-sm {
+  padding: 0;
+  margin: 0;
+}
+</style>

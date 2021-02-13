@@ -65,8 +65,4 @@ export default {
 .card-header {
   text-transform: capitalize;
 }
-.btn-sm {
-  padding: 0;
-  margin: 0;
-}
 </style>
