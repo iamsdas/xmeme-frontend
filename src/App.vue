@@ -1,6 +1,6 @@
 <template>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">XMeme</a>
@@ -61,3 +61,9 @@ export default {
   }
 };
 </script>
+
+<style>
+.modal-backdrop {
+  position: unset !important;
+}
+</style>
