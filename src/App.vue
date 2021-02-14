@@ -13,8 +13,15 @@
       </form>
     </div>
   </nav>
-  <!-- Card list -->
+  <!-- Body -->
   <div class="container-fluid">
+    <!-- Loading Spinner -->
+    <div v-if="loading" class="d-flex justify-content-center">
+      <div class="spinner-border m-5 text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <!-- Cards List -->
     <div
       class="row row-cols-1 justify-content-center"
       v-for="(result, index) in results"
@@ -44,15 +51,18 @@ export default {
   },
   data() {
     return {
-      results: []
+      results: [],
+      loading: false
     };
   },
   methods: {
     updateList() {
+      this.loading = true;
       fetch("https://xmeme-stream-backend.herokuapp.com/memes")
         .then(data => data.json())
         .then(data => {
           this.results = data;
+          this.loading = false;
         });
     }
   },
