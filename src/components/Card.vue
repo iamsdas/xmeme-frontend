@@ -12,10 +12,10 @@
         />
       </div>
       <!-- image  -->
-      <div>
+      <div class="d-flex justify-content-center">
         <img
           class="img-fluid"
-          :src="url"
+          :src="src"
           loading="lazy"
           @error="showAltImage"
         />
@@ -37,7 +37,9 @@ export default {
   },
   data() {
     return {
-      src: require("../assets/placeholder.png")
+      placeholder: require("../assets/placeholder.png"),
+      loading: require("../assets/loading.gif"),
+      src: ""
     };
   },
   emits: ["update"],
@@ -53,6 +55,22 @@ export default {
     },
     update() {
       this.$emit("update");
+    }
+  },
+  watch: {
+    url: {
+      immediate: true,
+      handler(newUrl) {
+        var newImage = new Image();
+        this.src = this.loading;
+        newImage.src = newUrl;
+        newImage.onload = () => {
+          this.src = newUrl;
+        };
+        newImage.onerror = () => {
+          this.src = this.placeholder;
+        };
+      }
     }
   }
 };
